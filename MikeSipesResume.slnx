@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="mikesipesresume.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
