@@ -1,16 +1,80 @@
-# React + Vite
+# Mike Sipes — Portfolio & Resume
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive single-page portfolio website built with React and Vite, showcasing 25+ years of software engineering experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Responsive design** — Mobile-first layout with breakpoints for tablet and desktop
+- **Dark mode** — Automatically adapts to the user's system preference via `prefers-color-scheme`
+- **Scroll animations** — Sections fade in on scroll using Intersection Observer
+- **Sticky navigation** — Fixed nav bar appears after scrolling, highlights the active section
+- **Accessible** — Semantic HTML, skip-to-content link, ARIA labels, focus-visible states
+- **Print-ready** — Includes a print stylesheet for clean PDF output
+- **Downloadable resume** — Direct PDF download from the hero section
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Layer     | Tool                          |
+|-----------|-------------------------------|
+| Framework | React 19                      |
+| Bundler   | Vite 8                        |
+| Styling   | Custom CSS (Grid + Flexbox)   |
+| Linting   | ESLint 9 with React plugins   |
+| Icons     | Inline SVG                    |
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18+)
+
+### Install & Run
+
+```bash
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+```
+
+The dev server starts at **http://localhost:50893**.
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+Output is written to the `dist/` directory, ready for static hosting.
+
+### Preview the Production Build
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```
+src/
+├── App.jsx        # Main application component (sections, data, hooks)
+├── App.css        # Component styles, responsive breakpoints, dark mode
+├── main.jsx       # React entry point
+└── index.css      # Global resets and base styles
+
+public/
+├── Files/         # Headshot images and downloadable resume PDF
+├── favicon.svg
+└── icons.svg
+```
+
+## Updating Content
+
+All resume content — summary, skills, experience, and strengths — is defined as data arrays in `src/App.jsx`. Edit those arrays directly to update the site.
