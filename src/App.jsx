@@ -49,25 +49,30 @@ const sections = [
   { id: 'summary', label: 'Summary' },
   { id: 'skills', label: 'Skills' },
   { id: 'experience', label: 'Experience' },
+  { id: 'innovation', label: 'Innovation' },
   { id: 'strengths', label: 'Strengths' },
 ]
 
 const skills = [
   {
-    category: 'Languages & Frameworks',
-    items: ['C#', '.NET / .NET Core', 'ASP.NET MVC', 'Web API', 'Entity Framework', 'EF Core', 'LINQ', 'Blazor', '.NET MAUI'],
+    category: 'AI / LLM Systems',
+    items: ['LLM Integrations (OpenAI, Claude)', 'Prompt Engineering', 'Structured Outputs', 'RAG Pipelines', 'Semantic Search', 'AI Agent Orchestration', 'Workflow Automation', 'Task Chaining', 'Evaluation Frameworks', 'Guardrails', 'Hallucination Mitigation', 'Clinical AI Systems'],
   },
   {
-    category: 'Frontend & Mobile',
-    items: ['React', 'Angular', 'JavaScript', 'jQuery', 'HTML5', 'CSS3', 'Bootstrap', 'Swift (iOS)', 'MAUI'],
+    category: 'Architecture & Platforms',
+    items: ['Distributed Systems', 'Microservices', 'Event-Driven Architecture', 'Multi-Tenant SaaS', 'High-Scale System Design', 'API-First Architecture', 'System Integration', 'Data Pipelines'],
   },
   {
-    category: 'Cloud & DevOps',
-    items: ['Microsoft Azure', 'Azure Functions', 'Service Bus', 'WebJobs', 'Blob Storage', 'CI/CD', 'Git', 'TFS'],
+    category: 'Cloud & Engineering',
+    items: ['Microsoft Azure', 'Azure Functions', 'Service Bus', 'WebJobs', 'Blob Storage', 'CI/CD', 'DevOps', '.NET / .NET Core', 'ASP.NET', 'REST APIs'],
   },
   {
-    category: 'Data & APIs',
-    items: ['SQL Server', 'T-SQL', 'RESTful APIs', 'Distributed Systems'],
+    category: 'Frontend & Cross-Platform',
+    items: ['Angular', 'React', 'Blazor', '.NET MAUI', 'Swift (iOS)', 'Device Integrations (LiDAR)'],
+  },
+  {
+    category: 'Data',
+    items: ['SQL Server', 'T-SQL', 'Data Modeling', 'Transformation Pipelines', 'API Integrations'],
   },
 ]
 
@@ -78,13 +83,18 @@ const experience = [
     date: 'July 2023 \u2013 Present',
     industries: ['Healthcare', 'AI'],
     bullets: [
-      'Architected enterprise AI agent platform for OnPoint Healthcare Partners, leveraging OpenAI to automate clinical workflows',
-      'Designed and implemented AI-driven processes for lab result interpretation and summarization, pre-visit clinical summaries, and automated order generation (labs, prescriptions, medication refills, referrals)',
-      'Built a modular AI orchestration system (MCP-style architecture) enabling coordinated agent workflows, structured outputs, and task chaining',
-      'Developed LLM-driven workflows using OpenAI and Claude APIs, including prompt engineering, validation, and domain-specific reasoning for healthcare',
-      'Designed backend services and APIs for healthcare data ingestion, normalization, and integration with AI pipelines',
-      'Developed cross-platform applications using .NET MAUI and Blazor, enabling shared codebases across web and mobile platforms',
-      'Contributed to frontend development using Angular, supporting production systems',
+      'Led architecture and development of an AI-powered clinical automation platform, leveraging LLMs, structured data pipelines, and agent-based orchestration to streamline healthcare workflows and decision-making',
+      'Architected an enterprise AI agent platform enabling automated clinical workflows including lab interpretation, pre-visit summaries, and order generation',
+      'Designed modular AI orchestration framework (agent-based / MCP-style) supporting structured outputs, task chaining, and multi-step reasoning',
+      'Built production-grade LLM workflows using OpenAI and Claude APIs with domain-specific prompt engineering and validation layers',
+      'Developed RAG-based clinical data pipelines for ingestion, normalization, and AI-driven insights',
+      'Implemented AI guardrails and evaluation frameworks to improve reliability, reduce hallucinations, and enforce structured outputs in clinical contexts',
+      'Delivered cross-platform applications using .NET MAUI and Blazor, enabling shared web/mobile codebases',
+      'Contributed to Angular-based frontends for modern healthcare applications',
+      'Built native iOS components using Swift, integrating LiDAR for advanced device capabilities',
+      'Led development of a computer vision + LiDAR prototype for automated eyeglass prescription generation (Hello Eyes) \u2014 named contributor on patent-pending optical measurement technology',
+      'Mentored engineers and set architectural direction across multiple projects',
+      'Owned technical hiring and evaluation for engineering roles, defining interview standards and conducting coding assessments',
     ],
   },
   {
@@ -93,13 +103,11 @@ const experience = [
     date: 'Feb 2014 \u2013 June 2023',
     industries: ['SaaS', 'Messaging', 'Ecommerce'],
     bullets: [
-      'Led architecture and delivery of enterprise-scale web applications for clients including Intel, PriceSmart, Sports Authority, and Long Beach Transit Authority',
-      'Architected and built Reachya, a multi-tenant SaaS messaging platform leveraging Azure (Functions, Service Bus, Blob Storage)',
-      'Designed and optimized systems for high-throughput, real-time messaging (SMS/MMS) with external integrations (Twilio)',
-      'Modernized legacy systems into scalable ASP.NET Core applications, improving performance, reliability, and maintainability',
-      'Directed a cross-functional team of developers and designers, establishing technical direction, coding standards, and delivery processes',
-      'Partnered with stakeholders to align technical solutions with business goals, scalability requirements, and user experience improvements',
-      'Delivered ecommerce platforms supporting multi-country operations, complex business rules, and high transaction volumes',
+      'Led architecture and delivery of enterprise-scale SaaS platforms and high-throughput messaging systems for major clients including Intel and PriceSmart',
+      'Architected and built Reachya, a multi-tenant messaging platform on Azure supporting real-time SMS/MMS at scale',
+      'Designed event-driven, high-throughput systems using Azure Service Bus and distributed processing patterns',
+      'Modernized legacy platforms into scalable ASP.NET Core applications, significantly improving performance and maintainability',
+      'Directed cross-functional engineering teams, establishing architecture standards and delivery processes',
     ],
   },
   {
@@ -108,10 +116,9 @@ const experience = [
     date: 'Jan 2012 \u2013 Feb 2014',
     industries: ['Library Automation', 'SaaS'],
     bullets: [
-      'Led strategic transition from legacy desktop applications to web-based SaaS platform architecture',
-      'Designed and implemented scalable ASP.NET solutions for library automation systems serving global clients',
-      'Improved system performance and usability, directly contributing to successful acquisition by SirsiDynix',
-      'Mentored engineers',
+      'Led transition from legacy desktop systems to web-based SaaS architecture',
+      'Delivered scalable ASP.NET solutions for global library systems',
+      'Contributed to product improvements supporting successful acquisition',
     ],
   },
   {
@@ -120,51 +127,44 @@ const experience = [
     date: 'June 2006 \u2013 Jan 2012',
     industries: ['Real Estate', 'PropTech'],
     bullets: [
-      'Re-architected and scaled a legacy platform into a cloud-based enterprise system (AWS) supporting North American operations',
-      'Enabled significant business growth by delivering a platform capable of supporting increased traffic, users, and operational complexity',
-      'Led engineering team and contributed to technical strategy, hiring, and long-term platform direction',
-      'Designed systems supporting search, content management, and high-availability web experiences',
+      'Re-architected legacy platform into a scalable cloud-based system (AWS)',
+      'Enabled significant business growth through improved scalability and performance',
+      'Led engineering team and technical strategy',
     ],
   },
   {
-    title: 'Lead Software Engineer',
-    company: 'EOS International',
-    date: 'Oct 2001 \u2013 June 2006',
-    industries: ['Library Automation'],
-    bullets: [
-      'Led re-architecture of underperforming PHP application into a high-performance ASP.NET platform',
-      'Reduced query execution times from minutes to milliseconds through database and application optimization',
-      'Played a key role in transitioning the company to modern web technologies',
-    ],
-  },
-  {
-    title: 'Co-Founder / Development Manager',
-    company: 'Physician.com',
-    date: 'Aug 1999 \u2013 Oct 2001',
+    title: 'Lead Software Engineer | Co-Founder | Software Engineer',
+    company: 'Earlier Experience',
+    date: '1997 \u2013 2006',
     industries: ['Healthcare'],
     bullets: [
-      'Co-founded and led development of a web platform delivering tools and communication services for physicians',
-      'Owned full product lifecycle including architecture, development, deployment, and operations',
-      'Built and led a cross-functional team supporting rapid product growth',
-    ],
-  },
-  {
-    title: 'Software Engineer',
-    company: 'Early Career',
-    date: '1997 \u2013 1999',
-    industries: [],
-    bullets: [
-      'Developed web and database-driven applications using early Microsoft web technologies',
-      'Built foundational expertise in application architecture, database design, and full lifecycle development',
+      'Co-founded Physician.com, building a web platform for physician communication and tools',
+      'Led full lifecycle development across multiple platforms and technologies',
+      'Established strong foundation in scalable web architecture and data systems',
     ],
   },
 ]
 
+const innovations = [
+  {
+    title: 'AI Clinical Automation Platform',
+    description: 'LLM-driven system for healthcare workflow automation and decision support',
+  },
+  {
+    title: 'RAG-Based Clinical Data System',
+    description: 'Retrieval-driven architecture for structured medical insights',
+  },
+  {
+    title: 'LiDAR Computer Vision System',
+    description: 'Prototype for optical measurement and prescription generation (patent-pending)',
+  },
+]
+
 const strengths = [
-  'Deep expertise in healthcare software, clinical workflows, and AI-driven decision systems',
-  'Strong experience in startup and high-growth environments, including product ideation and delivery',
-  'Proven ability to operate at both hands-on engineering and strategic leadership levels',
-  'Effective at translating complex technical concepts into business-aligned solutions',
+  'Deep expertise in healthcare systems, clinical workflows, and regulated environments',
+  'Strong background in startup and high-growth environments',
+  'Ability to operate across architecture, execution, and technical leadership',
+  'Skilled at translating complex technical systems into business value',
 ]
 
 function useScrollReveal() {
@@ -294,8 +294,8 @@ function App() {
           </div>
           <div className="hero-text">
             <h1>Michael (Mike) Sipes Sr.</h1>
-            <p className="subtitle">Lead Software Engineer</p>
-            <p className="tagline">Engineering Leadership | Technical Strategy | Team Building</p>
+            <p className="subtitle">Principal Software Engineer</p>
+            <p className="tagline">AI Systems | Healthcare Technology</p>
             <div className="contact-row" role="list" aria-label="Contact information">
               <span className="contact-item" role="listitem">
                 <LocationIcon />
@@ -339,12 +339,12 @@ function App() {
             <div className="stat-label">Years Experience</div>
           </div>
           <div className="stat">
-            <div className="stat-value">7</div>
-            <div className="stat-label">Companies</div>
+            <div className="stat-value">AI/ML</div>
+            <div className="stat-label">Specialization</div>
           </div>
           <div className="stat">
-            <div className="stat-value">AI / LLM</div>
-            <div className="stat-label">Current Focus</div>
+            <div className="stat-value">Healthcare</div>
+            <div className="stat-label">Domain Focus</div>
           </div>
           <a href="#experience" className="stat stat-link">
             <div className="stat-value">5+</div>
@@ -358,21 +358,25 @@ function App() {
           <h2 className="section-title" id="summary-title">Professional Summary</h2>
           <div className="summary">
             <p>
-              Lead Software Engineer with 25+ years of experience architecting and delivering
-              scalable, cloud-native applications, specializing in healthcare technology, AI-driven
-              systems, and enterprise SaaS platforms.
+              Principal-level engineer with 25+ years of experience architecting scalable SaaS platforms
+              and distributed systems, with deep specialization in AI-powered healthcare applications,
+              LLM-driven architectures, and intelligent automation.
             </p>
             <p>
-              Deep expertise in .NET (C#), Azure, distributed systems, and RESTful APIs, with recent
-              focus on AI/LLM-enabled products, clinical data pipelines, and intelligent automation.
-              Proven track record of leading engineering initiatives, modernizing legacy platforms, and
-              driving technical strategy aligned with business outcomes.
+              Expert in designing and delivering production-grade AI systems, including agent-based
+              workflows, RAG pipelines, and clinical decision-support tools that improve operational
+              efficiency and enable data-driven outcomes.
+            </p>
+            <p>
+              Proven leader in modernizing legacy systems, defining technical strategy, and delivering
+              high-impact solutions across startups and enterprise environments. Equally effective as a
+              hands-on architect and technical leader driving execution.
             </p>
           </div>
         </section>
 
         <section className="section reveal" id="skills" aria-labelledby="skills-title">
-          <h2 className="section-title" id="skills-title">Core Skills</h2>
+          <h2 className="section-title" id="skills-title">Core Expertise</h2>
           <div className="skills-grid">
             {skills.map((group) => (
               <div key={group.category} className="skill-category">
@@ -412,6 +416,18 @@ function App() {
               </ul>
             </article>
           ))}
+        </section>
+
+        <section className="section reveal" id="innovation" aria-labelledby="innovation-title">
+          <h2 className="section-title" id="innovation-title">Selected AI & Innovation Work</h2>
+          <div className="innovation-grid">
+            {innovations.map((item, i) => (
+              <div key={i} className="innovation-item">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="section reveal" id="strengths" aria-labelledby="strengths-title">

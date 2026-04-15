@@ -592,6 +592,40 @@
   opacity: 0.5;
 }
 
+/* ==================== INNOVATION ==================== */
+.innovation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.innovation-item {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  transition: all 0.25s;
+}
+
+.innovation-item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
+}
+
+.innovation-item h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.innovation-item p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
 /* ==================== STRENGTHS ==================== */
 .strengths-list {
   display: grid;
@@ -706,6 +740,10 @@
 
   .experience-date {
     align-self: flex-start;
+  }
+
+  .innovation-grid {
+    grid-template-columns: 1fr;
   }
 
   .strengths-list {
@@ -994,6 +1032,29 @@
     font-size: 9pt;
     line-height: 1.4;
     margin-bottom: 2px;
+  }
+
+  .innovation-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .innovation-item {
+    padding: 8px;
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+
+  .innovation-item:hover {
+    transform: none;
+  }
+
+  .innovation-item h3 {
+    font-size: 9pt;
+  }
+
+  .innovation-item p {
+    font-size: 8pt;
   }
 
   .strengths-list {
