@@ -1,6 +1,6 @@
 ---
 title: Teaching ChatGPT About Your Own Documents: A Beginner-Friendly Tour of RAG
-date: 2026-04-23
+date: 2026-04-19
 description: ChatGPT is smart, but it has no idea what's in your documents. Retrieval-Augmented Generation fixes that. Here's a plain-English walkthrough of a tiny two-part demo — a Python loader and a C# querier — that shows how RAG actually works end to end.
 slug: teaching-chatgpt-about-your-own-documents-a-tour-of-rag
 cover: /Files/blog/rag-tour.png
