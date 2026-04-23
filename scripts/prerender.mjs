@@ -13,7 +13,7 @@ const SITE_NAME = 'Mike Sipes'
 const AUTHOR = 'Michael Sipes Sr.'
 const RESUME_TITLE = 'Mike Sipes - Principal Software Engineer | AI Systems | Healthcare Technology'
 const RESUME_DESCRIPTION = 'Michael (Mike) Sipes Sr. - Principal Software Engineer with 25+ years of experience architecting scalable SaaS platforms, AI-powered healthcare applications, LLM-driven architectures, and intelligent automation.'
-const BLOG_TITLE = 'Blog — Mike Sipes'
+const BLOG_TITLE = 'Blog.md — Mike Sipes'
 const BLOG_DESCRIPTION = 'Writing on AI systems, LLM-driven architectures, healthcare technology, and software engineering by Mike Sipes.'
 const DEFAULT_OG_IMAGE = '/Files/Mike Sipes Headshot.webp'
 

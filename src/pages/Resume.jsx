@@ -207,7 +207,7 @@ export default function Resume() {
                 <MailIcon />
                 Contact Me
               </a>
-              <Link to="/blog" className="btn btn-secondary" aria-label="Read the blog">
+              <Link to="/blog" className="btn btn-secondary" aria-label="Read the blog.md">
                 <BlogIcon />
                 Blog
               </Link>

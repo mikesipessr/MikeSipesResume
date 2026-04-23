@@ -62,12 +62,12 @@ function StickyNav() {
                   {label}
                 </a>
               ))}
-              <NavLink to="/blog" className="sticky-nav-link">Blog</NavLink>
+              <NavLink to="/blog" className="sticky-nav-link">Blog.md</NavLink>
             </>
           ) : (
             <>
               <NavLink to="/" end className="sticky-nav-link">Resume</NavLink>
-              <NavLink to="/blog" className={({ isActive }) => `sticky-nav-link ${isActive ? 'sticky-nav-link--active' : ''}`}>Blog</NavLink>
+              <NavLink to="/blog" className={({ isActive }) => `sticky-nav-link ${isActive ? 'sticky-nav-link--active' : ''}`}>Blog.md</NavLink>
             </>
           )}
         </div>

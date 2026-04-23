@@ -7,7 +7,7 @@ export default function BlogIndex() {
   return (
     <main className="resume-body blog-body" role="main">
       <section className="section">
-        <h1 className="section-title">Blog</h1>
+        <h1 className="section-title">Blog.md</h1>
         {posts.length === 0 ? (
           <p>No posts yet.</p>
         ) : (

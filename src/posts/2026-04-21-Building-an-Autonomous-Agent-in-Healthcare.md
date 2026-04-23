@@ -8,7 +8,7 @@ coverAlt: Building an Autonomous Agent in Healthcare (Without the Hand-Waving)
 hideTitle: true
 ---
 
-Over the past year, my team replaced a pile of manual back-office work with an AI agent. Not a chatbot. A real autonomous worker that picks up a task, reads the chart, decides what to do, and actually does it — updates medication lists, writes appointment notes, discontinues old prescriptions, files lab results in the EHR.
+Over the past year, my team and I built an AI agent for a healthcare company to replace a pile of manual back-office work. Not a chatbot. A real autonomous worker that picks up a task, reads the chart, decides what to do, and actually does it — updates medication lists, writes appointment notes, discontinues old prescriptions, files lab results in the EHR.
 
 People love to wave their hands about "agentic AI." I want to show what it actually looks like under the hood, because the architecture is simpler — and more interesting — than the hype suggests. I'll keep the implementation details generic; the patterns below apply to any domain where an agent has to operate inside a third-party system of record and where mistakes have real consequences.
 
