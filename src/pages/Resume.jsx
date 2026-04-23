@@ -209,7 +209,7 @@ export default function Resume() {
               </a>
               <Link to="/blog" className="btn btn-secondary" aria-label="Read the blog.md">
                 <BlogIcon />
-                Blog
+                Blog.md
               </Link>
             </div>
           </div>
