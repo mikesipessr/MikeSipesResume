@@ -1,5 +1,5 @@
 ---
-title: Two Attributes and an Auto(): How Semantic Kernel Clicked for Me"
+title: Two Attributes and an Auto(): How Semantic Kernel Clicked for Me
 date: 2026-04-25
 description: A practical walkthrough of how Semantic Kernel turns a plain C# class into something an LLM can call — just two attributes and an Auto() flag — plus a peek at the loop running under the hood.
 slug: two-attributes-and-an-auto-how-semantic-kernel-clicked-for-me
