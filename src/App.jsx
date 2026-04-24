@@ -27,6 +27,13 @@ function StickyNav() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 300)
 
+      const doc = document.documentElement
+      const atBottom = window.innerHeight + window.scrollY >= doc.scrollHeight - 2
+      if (atBottom) {
+        setActive(sections[sections.length - 1].id)
+        return
+      }
+
       const offsets = sections.map(({ id }) => {
         const el = document.getElementById(id)
         if (!el) return { id, top: Infinity }
