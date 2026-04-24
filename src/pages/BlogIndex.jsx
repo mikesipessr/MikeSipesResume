@@ -12,12 +12,24 @@ export default function BlogIndex() {
           <p>No posts yet.</p>
         ) : (
           <ul className="blog-list">
-            {posts.map((post) => (
+            {posts.map((post, i) => (
               <li key={post.slug} className="blog-list-item">
                 <Link to={`/blog/${post.slug}`} className="blog-list-link">
-                  <h2>{post.title}</h2>
-                  {post.date && <span className="blog-list-date">{formatPostDate(post.date)}</span>}
-                  {post.description && <p>{post.description}</p>}
+                  {post.cover && (
+                    <img
+                      src={post.cover}
+                      alt=""
+                      className="blog-list-thumb"
+                      loading={i === 0 ? 'eager' : 'lazy'}
+                      width="160"
+                      height="110"
+                    />
+                  )}
+                  <div className="blog-list-text">
+                    <h2>{post.title}</h2>
+                    {post.date && <span className="blog-list-date">{formatPostDate(post.date)}</span>}
+                    {post.description && <p>{post.description}</p>}
+                  </div>
                 </Link>
               </li>
             ))}

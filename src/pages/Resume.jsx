@@ -176,6 +176,10 @@ export default function Resume() {
             <h1>Michael (Mike) Sipes Sr.</h1>
             <p className="subtitle">Principal Software Engineer</p>
             <p className="tagline">AI Systems | Healthcare Technology</p>
+            <p className="hero-status" aria-label="Current status">
+              <span className="hero-status-dot" aria-hidden="true" />
+              Currently: Lead Engineer @ Invene, LLC
+            </p>
             <div className="contact-row" role="list" aria-label="Contact information">
               <span className="contact-item" role="listitem">
                 <LocationIcon />
@@ -307,6 +311,7 @@ export default function Resume() {
           <div className="innovation-grid">
             {innovations.map((item, i) => (
               <div key={i} className="innovation-item">
+                <span className="card-index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </div>
@@ -318,7 +323,10 @@ export default function Resume() {
           <h2 className="section-title" id="strengths-title">Additional Strengths</h2>
           <ul className="strengths-list">
             {strengths.map((strength, i) => (
-              <li key={i}>{strength}</li>
+              <li key={i}>
+                <span className="card-index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                <span className="strength-text">{strength}</span>
+              </li>
             ))}
           </ul>
         </section>

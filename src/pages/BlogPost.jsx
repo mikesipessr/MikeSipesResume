@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getPost, getAdjacentPosts, formatPostDate } from '../lib/posts'
 
@@ -6,11 +6,31 @@ export default function BlogPost() {
   const { slug } = useParams()
   const post = getPost(slug)
   const { previous, next } = getAdjacentPosts(slug)
+  const progressRef = useRef(null)
 
   useEffect(() => {
     if (post) document.title = `${post.title} — Mike Sipes`
     return () => {
       document.title = 'Mike Sipes - Principal Software Engineer | AI Systems | Healthcare Technology'
+    }
+  }, [post])
+
+  useEffect(() => {
+    if (!post) return
+    const update = () => {
+      const doc = document.documentElement
+      const max = doc.scrollHeight - window.innerHeight
+      const ratio = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0
+      if (progressRef.current) {
+        progressRef.current.style.setProperty('--progress', ratio.toString())
+      }
+    }
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
     }
   }, [post])
 
@@ -29,6 +49,7 @@ export default function BlogPost() {
 
   return (
     <main className="resume-body blog-body" role="main">
+      <div ref={progressRef} className="blog-progress" aria-hidden="true" />
       <article className="section blog-post">
         <Link to="/blog" className="blog-back-link">← Back to blog</Link>
         {post.cover && (
