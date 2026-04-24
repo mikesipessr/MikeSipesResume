@@ -16,18 +16,16 @@ const sections = [
 
 function StickyNav() {
   const [active, setActive] = useState('')
-  const [visible, setVisible] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
   const onResume = location.pathname === '/'
+  const visible = !onResume || scrolled
 
   useEffect(() => {
-    if (!onResume) {
-      setVisible(true)
-      return
-    }
+    if (!onResume) return
 
     const handleScroll = () => {
-      setVisible(window.scrollY > 300)
+      setScrolled(window.scrollY > 300)
 
       const offsets = sections.map(({ id }) => {
         const el = document.getElementById(id)

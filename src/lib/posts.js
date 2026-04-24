@@ -62,11 +62,29 @@ export function formatPostDate(value) {
 }
 
 export function getAllPosts() {
-  return posts.map(({ content, ...meta }) => meta)
+  return posts.map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    date: p.date,
+    description: p.description,
+    cover: p.cover,
+    coverAlt: p.coverAlt,
+    hideTitle: p.hideTitle,
+  }))
 }
 
 export function getPost(slug) {
   const post = posts.find((p) => p.slug === slug)
   if (!post) return null
   return { ...post, html: marked.parse(post.content) }
+}
+
+export function getAdjacentPosts(slug) {
+  const index = posts.findIndex((p) => p.slug === slug)
+  if (index === -1) return { previous: null, next: null }
+  const meta = (p) => ({ slug: p.slug, title: p.title, date: p.date })
+  return {
+    previous: index < posts.length - 1 ? meta(posts[index + 1]) : null,
+    next: index > 0 ? meta(posts[index - 1]) : null,
+  }
 }

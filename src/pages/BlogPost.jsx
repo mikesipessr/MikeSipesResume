@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { getPost, formatPostDate } from '../lib/posts'
+import { getPost, getAdjacentPosts, formatPostDate } from '../lib/posts'
 
 export default function BlogPost() {
   const { slug } = useParams()
   const post = getPost(slug)
+  const { previous, next } = getAdjacentPosts(slug)
 
   useEffect(() => {
     if (post) document.title = `${post.title} — Mike Sipes`
@@ -41,6 +42,22 @@ export default function BlogPost() {
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
+        {(previous || next) && (
+          <nav className="blog-post-nav" aria-label="Blog post navigation">
+            {previous ? (
+              <Link to={`/blog/${previous.slug}`} className="blog-post-nav-link blog-post-nav-prev">
+                <span className="blog-post-nav-label">← Previous</span>
+                <span className="blog-post-nav-title">{previous.title}</span>
+              </Link>
+            ) : <span />}
+            {next ? (
+              <Link to={`/blog/${next.slug}`} className="blog-post-nav-link blog-post-nav-next">
+                <span className="blog-post-nav-label">Next →</span>
+                <span className="blog-post-nav-title">{next.title}</span>
+              </Link>
+            ) : <span />}
+          </nav>
+        )}
       </article>
     </main>
   )
