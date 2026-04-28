@@ -15,7 +15,7 @@ const RESUME_TITLE = 'Mike Sipes - Principal Software Engineer | AI Systems | He
 const RESUME_DESCRIPTION = 'Michael (Mike) Sipes Sr. - Principal Software Engineer with 25+ years of experience architecting scalable SaaS platforms, AI-powered healthcare applications, LLM-driven architectures, and intelligent automation.'
 const BLOG_TITLE = 'Blog.md — Mike Sipes'
 const BLOG_DESCRIPTION = 'Writing on AI systems, LLM-driven architectures, healthcare technology, and software engineering by Mike Sipes.'
-const DEFAULT_OG_IMAGE = '/Files/Mike Sipes Headshot.webp'
+const DEFAULT_OG_IMAGE = '/Files/Sipes-Headshot.jpg'
 
 function parseFrontmatter(raw) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/)

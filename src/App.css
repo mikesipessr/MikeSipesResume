@@ -146,29 +146,70 @@
   animation: fadeIn 0.6s ease-out;
 }
 
-/* Headshot */
+/* Headshot — dramatic hero portrait */
 .headshot-wrapper {
   flex-shrink: 0;
+  position: relative;
+  padding: 18px;
+  animation: headshot-float 6s ease-in-out infinite;
+}
+
+.headshot-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.55), rgba(168, 85, 247, 0.45) 50%, rgba(59, 130, 246, 0.5));
+  filter: blur(28px);
+  opacity: 0.7;
+  z-index: 0;
+  transition: opacity 0.4s, filter 0.4s;
+}
+
+.headshot-frame {
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  padding: 3px;
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #6366f1 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 25px 60px -15px rgba(0, 0, 0, 0.55),
+    0 12px 30px -10px rgba(99, 102, 241, 0.45);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .headshot {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
+  display: block;
+  width: 220px;
+  height: 280px;
+  border-radius: 17px;
   object-fit: cover;
-  object-position: center top;
-  border: 3px solid rgba(255, 255, 255, 0.15);
-  box-shadow:
-    0 0 0 4px rgba(99, 102, 241, 0.2),
-    0 8px 32px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
+  object-position: center 20%;
+  background: var(--bg-subtle);
 }
 
-.headshot:hover {
-  transform: scale(1.03);
+.headshot-wrapper:hover .headshot-frame {
+  transform: translateY(-4px) scale(1.02);
   box-shadow:
-    0 0 0 4px rgba(99, 102, 241, 0.35),
-    0 12px 40px rgba(0, 0, 0, 0.4);
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 35px 80px -15px rgba(0, 0, 0, 0.65),
+    0 18px 40px -10px rgba(99, 102, 241, 0.65);
+}
+
+.headshot-wrapper:hover::before {
+  opacity: 1;
+  filter: blur(36px);
+}
+
+@keyframes headshot-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .headshot-wrapper { animation: none; }
+  .headshot-frame { transition: none; }
 }
 
 /* Hero text */
@@ -707,8 +748,8 @@
   }
 
   .headshot {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 200px;
   }
 
   .hero-text h1 {
@@ -910,10 +951,26 @@
     animation: none;
   }
 
+  .headshot-wrapper {
+    padding: 0;
+    animation: none;
+  }
+
+  .headshot-wrapper::before {
+    display: none;
+  }
+
+  .headshot-frame {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+
   .headshot {
     width: 80px;
-    height: 80px;
+    height: 100px;
     border: 1px solid #ccc;
+    border-radius: 4px;
   }
 
   .hero-text h1 {

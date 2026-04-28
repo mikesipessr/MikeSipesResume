@@ -160,17 +160,21 @@ export default function Resume() {
       <header className="hero" role="banner">
         <div className="hero-inner">
           <div className="headshot-wrapper">
-            <picture>
-              <source srcSet="/Files/Mike Sipes Headshot.webp" type="image/webp" />
-              <img
-                src="/Files/Mike Sipes Headshot-400.png"
-                alt="Mike Sipes headshot"
-                className="headshot"
-                width="160"
-                height="160"
-                loading="eager"
-              />
-            </picture>
+            <div className="headshot-frame">
+              <picture>
+                <source srcSet="/Files/Sipes-Headshot.avif" type="image/avif" />
+                <source srcSet="/Files/Sipes-Headshot.webp" type="image/webp" />
+                <img
+                  src="/Files/Sipes-Headshot.jpg"
+                  alt="Mike Sipes headshot"
+                  className="headshot"
+                  width="220"
+                  height="280"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </picture>
+            </div>
           </div>
           <div className="hero-text">
             <h1>Michael (Mike) Sipes Sr.</h1>
