@@ -176,3 +176,4 @@ The `LabResultReview` pipeline gets there because the tool output is genuinely d
 
 Next up, I want to look at what happens when tasks have dependencies on each other — where the output of one task should influence how you approach another. That's where orchestration gets interesting.
 
+![SK Healthcare Demo Screenshot](/Files/blog/teaching-the-agent-to-actually-think-screen.png)
