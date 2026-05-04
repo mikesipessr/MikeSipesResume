@@ -7,8 +7,6 @@ cover: /Files/blog/making-the-healthcare-demo-actually-think-before-it-acts.png
 coverAlt: Making the Healthcare Demo Actually Think Before It Acts
 hideTitle: true
 ---
-# Making the Healthcare Demo Actually Think Before It Acts
-
 *Part 3 of an ongoing series building a healthcare voice-to-workflow AI demo with Semantic Kernel*
 
 *Previous posts: [Part 1 — From Voice to Structured Data](https://mikesipes.me/blog/from-voice-to-structured-data-building-healthcare-ai-demo-semantic-kernel) · [Part 2 — Teaching the Assistant to Actually Do Things](https://mikesipes.me/blog/teaching-the-healthcare-assistant-to-actually-do-things)*
